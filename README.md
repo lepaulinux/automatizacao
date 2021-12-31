@@ -1,0 +1,2 @@
+# automatizacao
+Automatizacao com Ansible
