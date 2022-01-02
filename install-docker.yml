@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Executando "apt-get update"
+    apt:
+      update_cache: yes
+
+  - name: Update all packages to the "latest version"
+    apt:
+      upgrade: dist
+
+  - name: "Instalando Docker"
+    apt:
+      name: docker.io
+
+  - name: "Enable Docker"
+    systemd:
+      name: docker
+      state: started
+
